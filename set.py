@@ -79,8 +79,7 @@
 # print(bool(1))
 
 
-
-#字符串转换字节类型
+# 字符串转换字节类型
 #
 # s = "张建超"
 # n = bytes(s,encoding="utf-8")
@@ -111,7 +110,7 @@
 # input("adssafsadf")
 # #print(f)
 
-#truncate 截断，指针为后的清空
+# truncate 截断，指针为后的清空
 # f.seek(3)
 # f.truncate() 字符3的位置开始截断。
 #
@@ -120,7 +119,7 @@
 #         f2.write(line)
 #     print(f2)
 
-#随机生成字母
+# 随机生成字母
 # import random
 # i = random.randrange(65,91)
 # c = chr(i)
@@ -162,7 +161,6 @@
 # print('path:',path)
 
 
-
 # 有误！！！
 # import os
 # count = os.system("grep '123' db| wc -l'")
@@ -173,8 +171,6 @@
 #     print("$count")
 # else:
 #     print("0")
-
-
 
 
 # print("hello world!")
@@ -196,8 +192,6 @@
 # 宁静的夏天...
 # """
 # print(str)
-
-
 
 
 # import random
@@ -226,7 +220,7 @@
 #         continue
 
 
-#列表
+# 列表
 # num = ["小甲鱼:nihao",'黑夜']
 # for i in num:
 #     print(i)
@@ -238,7 +232,7 @@
 # del num[0]
 # print(num)
 
-#元组
+# 元组
 #
 # print('a',end=' ')
 # print('b',end=' ')
@@ -254,7 +248,7 @@
 # print('I repeat, the value is', i)
 
 
-#daxiao
+# daxiao
 #
 # def fun(a,b):
 #     if a>b:
@@ -267,7 +261,6 @@
 # a = input("A 的值为：")
 # b = input("B 的值为：")
 # fun(a,b)
-
 
 
 #
@@ -302,9 +295,7 @@
 # print(print_max.__doc__)
 
 
-
-
-#函数参数及路径打印
+# 函数参数及路径打印
 # import sys,os
 # print("The command line arguments are:")
 # for i in sys.argv:
@@ -313,7 +304,7 @@
 # print(os.getcwd())
 #
 
-#模块引用方法一
+# 模块引用方法一
 # import if_else
 # if_else.say_hi()
 # print('Auth By:',if_else._auth_)
@@ -324,8 +315,7 @@
 # print('Auth By',_auth_)
 
 
-
-#列表
+# 列表
 # list = ['zhang','jian','chao']
 # print('my name is so lang:',len(list))
 # # print('These item are:',end=' ')
@@ -341,7 +331,6 @@
 # print('old list is:',list)
 # new_list='welcome',list
 # print('new list is:',new_list)
-
 
 
 # #字典
@@ -360,7 +349,6 @@
 # print(email.items())
 
 
-
 # #集合
 # print('Simple Assignment')
 # shoplist = ['zhang','jian','chao']
@@ -370,20 +358,17 @@
 # print('mylist is',mylist)
 
 
-
-
-#函数
+# 函数
 # g = lambda x,y:x + y
 # print(g(2,3))
 
 
-#类
+# 类
 # class myself:
 #     def zhang(self):
 #         print("This is The test...")
 # p = myself()
 # p.zhang()
-
 
 
 # _init_方法：
@@ -419,7 +404,7 @@
 #     print('Hello ,',username.title())
 # greet_user('zhangjianchao')
 
-#输入名字，返回欢迎语！
+# 输入名字，返回欢迎语！
 # def name_format(xing,ming):
 #     full_name = xing +' '+ming
 #     return full_name.title()
@@ -439,9 +424,7 @@
 # list(usernames)
 
 
-
-
-#在函数中修改列表
+# 在函数中修改列表
 # listone = ['zhang','jian','chao']
 # listnone = []
 # while listone:
@@ -456,8 +439,6 @@
 # print(b(3))
 
 
-
-
 # filter 函数
 # a = list(filter(lambda x : x % 2,range(10)))
 # print(a)
@@ -466,7 +447,7 @@
 # a = list(map(lambda x : x * 2,range(10)))
 # print(a)
 
-#阶乘
+# 阶乘
 # def jiecheng(n):
 #     result = n
 #     for i in range(1,n):
@@ -477,8 +458,7 @@
 # print("%d 的阶乘为：%d" %(num,result))
 
 
-
-#全数返回
+# 全数返回
 # num1 = "请告诉我一些东西，我将原本返回你："
 # num1 += "\n如果你什么都不想说，那就‘quit’退出吧！"
 # message = ""
@@ -498,8 +478,7 @@
 #         print("I love you!" + '\t' + city.title() + '!')
 
 
-
-#递归
+# 递归
 # def digui(n):
 #     if n < 1:
 #         print("输入的数值有误！")
@@ -514,7 +493,7 @@
 #     print("共有%d对小兔子诞生！" % result)
 
 
-#汉诺塔游戏
+# 汉诺塔游戏
 # def hnt(n,a,b,c):
 #     if n == 1:
 #         print(a,'-->',c)
@@ -537,8 +516,7 @@
 # print(mylist2)
 
 
-
-#遍历多个列表
+# 遍历多个列表
 # questions=['name','quest','favorite color']
 # answers=['qinshihuang','the holy','blue']
 # for q,a in zip(questions,answers):
@@ -570,7 +548,6 @@
 # fi2(1000)
 
 
-
 # #调用if_else.py模块
 # from if_else import PI,main
 # def area(redius):
@@ -580,14 +557,13 @@
 # main2()
 # main()
 
-#字符串
+# 字符串
 # s = 'hello ,zhangjianchao\n'
 # print(repr(s)) # repr函数可以转译字符串中的特殊字符。
 # print(s)
 
 
-
-#输出平方与立方的值
+# 输出平方与立方的值
 # for x in range(1,11):
 #     print(repr(x),repr(x*x),repr(x**3),end='\n')
 # print("*********************")
@@ -595,8 +571,7 @@
 #     print('{0:2d}是我本人："我是平方：{1:3d}""我是立方：{2:4d}"'.format(x,x*x,x**3))
 
 
-
-#格式化输出
+# 格式化输出
 # table = {'zhang':5,'jian':4,'chao':3}
 # for name, num in table.items():
 #     print('name:{0:5},num:{1:d}'.format(name,num))
@@ -623,9 +598,7 @@
 # f.close()
 
 
-
-
-#异常处理
+# 异常处理
 # while True:
 #         try:
 #             x = int(input("Please enter a number: "))
@@ -674,8 +647,7 @@
 # p.speak()
 
 
-
-#多重继承
+# 多重继承
 # 类定义
 # class people:
 #     # 定义基本属性
@@ -734,10 +706,7 @@
 # test.speak()  # 方法名同，默认调用的是在括号中排前地父类的方法
 
 
-
-
-
-#调用父类
+# 调用父类
 # class Parent:  # 定义父类
 #     def myMethod(self):
 #         print('调用父类方法')
@@ -751,7 +720,6 @@
 # b = Child()  # 子类实例
 # b.myMethod()  # 子类调用重写方法
 # super(Child, b).myMethod()  # 用子类对象调用父类已被覆盖的方法
-
 
 
 # class JustCounter:
@@ -771,12 +739,7 @@
 # #print(counter.__secretCount)  # 报错，实例不能访问私有变量
 
 
-
-
-
-
-
-#类的私有方法
+# 类的私有方法
 # class Site:
 #     def __init__(self, name, url):
 #         self.name = name  # public
@@ -829,7 +792,7 @@
 # print(a)
 
 
-#返回值
+# 返回值
 # def test01():
 #     msg = "没有返回值的函数。"
 #     print(msg)
@@ -852,7 +815,6 @@
 #     return 0
 # a = test(5,y = 2,z = 3)
 # print(a)
-
 
 
 # 往文件里面循环插入
@@ -899,7 +861,6 @@
 # print(tail)
 
 
-
 # 爬虫小试牛刀
 
 # import re
@@ -910,8 +871,6 @@
 # html = rr.read()
 # m = re.findall(r'page.setTitle(.*?);',html.decode('utf8'))
 # print(m)
-
-
 
 
 #
@@ -981,7 +940,6 @@
 #         wangye(i)
 
 
-
 # map1 = [1,2,3,4,5]
 # map2 = [2,2,2,2,2]
 #
@@ -994,9 +952,7 @@
 # map(map2)
 
 
-
-
-#变量传递函数和变量
+# 变量传递函数和变量
 # map = [1,2,3,4,5,6]
 # def fun(func,array):
 #     ret = []
@@ -1023,10 +979,6 @@
 #         rett.append(res)
 #     print(rett)
 # map_test(del_one,num1)
-
-
-
-
 
 
 # class Test(object):
@@ -1084,9 +1036,6 @@
 # good_cat(dog)
 
 
-
-
-
 # class Student(object):
 #     count = 0
 #
@@ -1109,7 +1058,6 @@
 #         else:
 #             print('Students:', Student.count)
 #             print('测试通过!')
-
 
 
 # 线程
@@ -1149,7 +1097,6 @@
 # print ("退出主线程")
 
 
-
 # #filter函数
 # movie_people = ['sb_1','sb_2','sb_3','xiaoming','xiaowang']
 # def show_test(p):
@@ -1165,9 +1112,6 @@
 # print(filter_test(lambda n:not n.endswith('2'),movie_people))
 
 
-
-
-
 # num01 = [2,3,4,5,6]
 # def reduce_test(func,array,init = None):
 #     if  init is None:
@@ -1180,14 +1124,11 @@
 # print(reduce_test(lambda x,y:x*y,num01,100))
 
 
-
-
 # reduce 函数
 # from functools import reduce
 # num1 = [1,2,3,4,5]
 # print(reduce(lambda x,y:x+y,num1))
 # print(reduce(lambda x,y:x*y,num1,100)) #100代表的是传入的默认值。
-
 
 
 # 编码、解码
@@ -1199,13 +1140,12 @@
 # print(list(zip(('a','b','c'),(1,2,3))))
 
 
-
-#比较年龄的最大值、最小值
+# 比较年龄的最大值、最小值
 # age_dis = {'age1':1,'age2':20,'age3':24,'age4':3}
 # print("name:%s,age:%s" %(max(age_dis),max(age_dis.values())))
 
 
-#取字典中年龄最大者
+# 取字典中年龄最大者
 # people = [
 #     {'name':'zhang','age':24},
 #     {'name':'jian','age':25},
@@ -1215,11 +1155,7 @@
 # print(max(people,key=lambda dic:dic['age']))
 
 
-
-
-
-
-#各省并发
+# 各省并发
 # import json
 # f = open("db",'r',encoding='utf8')
 # data = f.read()
@@ -1234,8 +1170,6 @@
 #     p2 = f2.write(p[1])
 
 
-
-
 # 读取二进制文件内容并将其打印
 # with open('db3','rb') as f:
 #     b = f.read()
@@ -1243,8 +1177,39 @@
 #     print(b.decode())
 
 
-with open('db3','r+',encoding='utf-8') as f:
-    # f.write('123\n')
-    c = f.read()
-    print(c)
-    print(c.rstrip()) #打印时删除多余的空行
+# with open('db3', 'r+', encoding='utf-8',newline='') as f:   #newline=''读取文件中真正的换行符号。
+#     # f.write('123\n')
+#     c = f.read(3)
+#     print(c)
+#     # print(c.rstrip())  # 打印时删除多余的空行
+#     # print(f.closed)
+#     # print(f.encoding)
+#     print(f.seek(0))   #表示指定光标的位置
+#     print(f.readlines())
+#     print(f.tell())
+
+
+# with open('seek.txt','r',encoding='utf-8',newline='') as f:
+#     ff = f.read()
+#     print(ff)
+#     print(ff.replace('\r\n','\n'))
+#     # f.seek(10,1)
+#     # print(f.tell())
+#     # f.seek(13,1)  #1位置表示从上次光标所在的位置开始操作。使用seek最好以‘rb模式‘打开文件（’seek.txt‘，‘rb’）
+#     # print(f.tell())
+
+
+# 读取日志文件最后一行的数据
+# with open('日志文件.txt','rb') as f:
+# # with open('db','rb') as f:
+#     for i in f:
+#         doce = -5
+#         while True:
+#             f.seek(doce,2)
+#             data = f.readlines()
+#             print(data)
+#             print(len(data))
+#             if len(data) > 1:
+#                 print("文件的最后一行是：%s" %(data[-1].decode('utf-8')))
+#                 break
+#             doce *=2

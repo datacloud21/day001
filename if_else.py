@@ -11,11 +11,13 @@
 # _auth_='ZhangJc'
 
 
-
-
-#供set.py调用
+# 供set.py调用
 PI = 3.14
+
+
 def main():
-    print("PI:",PI)
-if __name__=="__main__":
+    print("PI:", PI)
+
+
+if __name__ == "__main__":
     main()
