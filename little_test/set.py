@@ -1205,7 +1205,7 @@
 #     for i in f:
 #         doce = -5
 #         while True:
-#             f.seek(doce,2)
+#             f.seek(doce,2) # 2代表倒序查找。
 #             data = f.readlines()
 #             print(data)
 #             print(len(data))
@@ -1213,3 +1213,319 @@
 #                 print("文件的最后一行是：%s" %(data[-1].decode('utf-8')))
 #                 break
 #             doce *=2
+
+
+# 迭代器协议
+# l = [1,2,3,4,5,6,6]
+# index = 0
+# while index < len(l):
+#     print(l[index])
+#     index += 1
+
+
+# with open('db3','r+') as f:
+#     iter = f.__iter__()
+#     # while f.readline() != None:
+#     while True:
+#         try:
+#             print(iter.__next__(),end='')
+#         except StopIteration:
+#             #print("迭代出错了！")
+#             break
+
+
+# list = []
+# for i in range(10):
+#     list.append(i)
+#     print("第%s个鸡蛋！\n" % i,end='')
+
+
+# while True:
+#     name = input("请输入你的名字：")
+#     res = [name + '帅哥！' if name == 'zhangjianchao' or name =='zjc' else  name + '傻冒!']
+#     print(res)
+
+
+# print(sum(i for i in range(100000000)))
+
+
+# #yield 与 return 作用类似   不同的是 yield 可以返回多个值
+# def test():
+#     yield 1         #可以返回多个数值
+#     yield 2
+#     yield 3
+#     yield 4
+#     yield 5
+# a = test()
+# while True:
+#     try:
+#         print(a.__next__())
+#     except StopIteration:
+#         break
+
+
+# def chibaozi():
+#     ret = []
+#     for i in range(100):
+#         ret.append('包子：%s' %i)
+#     return  ret
+# print(chibaozi())
+
+
+# def  product_baozi():
+#     for i in range(100):
+#         print("正在生产第%s个包子..." %i)
+#         yield '一屉包子',i   #下次运行就从yield位置开始运行
+# ret = product_baozi()
+# while True:
+#     try:
+#         print(ret.__next__())
+#     except StopIteration:
+#         break
+
+
+# def baozi():
+#     for i in range(10000):
+#         yield '鸡蛋%s' %i
+# ret = baozi()
+# for i in ret:
+#     print(i)
+
+
+# 人口普查
+# def get_population():
+#     with open('人口普查','r',encoding='utf-8',newline='') as f:
+#         for i in f:
+#             yield i
+# g = get_population() #获取到的值为字符串
+#
+# while True:
+#     try:
+#         print(eval(g.__next__().replace('\n',''))['name']) #eval函数将字符串转换成字典形式
+#     except StopIteration:
+#         break
+#
+# gg = get_population()
+# def all_num_people():
+#     num = sum(eval(i)['population'] for i in gg)
+#     print("全国总人口为：%s" % num)
+# all_num_people()
+#
+# ggg = get_population()
+# while True:
+#     try:
+#         for i,j in eval(ggg.__next__()).items():
+#             print(i + ":" + str(j))
+#     except StopIteration:
+#         break
+
+
+# enumerate函数     可遍历的数据对象组合为一个索引序列，同事列出数据和数据下标。一般用在for循环当中。
+# import time
+# def producer():
+#     ret = []
+#     for i in range(10000):
+#         # time.sleep(0.1)
+#         ret.append(i)
+#     return ret
+# def consumer(res):
+#     for index,baozi in enumerate(res):
+#         time.sleep(0.1)
+#         print('第%s个人，吃了第%s个包子！' %(index,baozi))
+# res = producer()
+# consumer(res)
+
+
+# 生产者与消费者(吃包子)
+# import time
+# def shengchan(name):
+#     print("我是生产者：%s,接下来由我为大家生产产品..." %name)
+#     while True:
+#         chanpin = yield
+#         print("%s正在消费第%s件产品..." %(name,chanpin))
+# def xiaofei():
+#     res = shengchan("小张")
+#     res2 = shengchan("小wang")
+#     res.__next__()
+#     res2.__next__()
+#     for i in range(100):
+#         res.send("%s" %i)
+#         res2.send("%s" %i)
+#         time.sleep(1)
+# xiaofei()
+
+
+# 装饰器原则：1、不改变被修饰函数的源代码；2、不修改被调用函数的调用方式。
+# # 函数闭包 && 装饰器
+# import time
+# def timmer(func):
+#     def wapper(*args,**kwargs):
+#         start_time = time.time()
+#         res = func(*args,**kwargs)
+#         stop_time = time.time()
+#         print('运行时间是%s' %(stop_time-start_time))
+#         return res
+#     return wapper
+# #第一种
+# def test(name,age):
+#     time.sleep(3)
+#     print("test函数运行完毕！名字是:%s,年龄是：%s" %(name,age))
+#     return "这是test函数的返回值！"
+# #第二种
+# def test2(name,age,gender):
+#     time.sleep(3)
+#     print("test2函数运行完毕！名字是:%s,年龄是：%s,性别是：%s" %(name,age,gender))
+#     return "这是test2函数的返回值！"
+# #两种调用方式
+# ff = timmer(test) #返回的是wapper的地址
+# print(ff('zhang',123))  #执行的是wapper函数
+# fff = timmer(test2)
+# print(fff('zhang',123,'女'))
+
+
+# l = [1,2,3,4,5,6,7,8,9,0]
+# a,*_,b = l
+# print(a)
+# print(b)
+# print(l[0])
+# print(l[-1])
+
+
+# 京东购物
+# user_list = [
+#     {'name':'xiaozhang','passwd':'xiaozhang'},
+#     {'name':'xiaowang','passwd':'xiaowang'},
+#     {'name':'xiaoli','passwd':'xiaoli'},
+#     {'name':'xiaochen','passwd':'xiaochen'},
+# ]
+# current_dic = {'username':None,'login':False}
+#
+# def auth(auth_type='filedb'):
+#     def auth_func(func):
+#         def wapper(*args,**kwargs):
+#             print('认证类型是：',auth_type)
+#             if auth_type == 'filedb':
+#                 # if username == 'sb' and passwd =='123':
+#                 if current_dic['username'] and current_dic['login']:
+#                     res = func(*args,**kwargs)
+#                     return res
+#                 username = input('用户名：').strip()
+#                 passwd = input('密码:').strip()
+#                 for index,user_dic in enumerate(user_list):
+#                     if username == user_dic['name'] and passwd == user_dic['passwd']:
+#                         current_dic['username'] = username
+#                         current_dic['login'] = True
+#                         res = func(*args, **kwargs)
+#                         return res
+#                 else:
+#                     print("用户名或密码错误，请重新登录！")
+#             elif auth_type == 'ldap':
+#                 print('不会玩。。。')
+#             else:
+#                 print('米西米西......')
+#
+#         return wapper
+#     return auth_func
+# @auth(auth_type='filedb')
+# def index():
+#     print("欢迎来到京东主页！")
+#
+# @auth(auth_type='ldap')
+# def home(name):
+#     print("欢迎'%s'回家!" %name)
+#
+# @auth(auth_type='sss')
+# def shopping_car(name):
+#     print("[%s]的购物车里有[%s,%s,%s]" %(name,'奶茶','妹妹','娃娃'))
+#
+#
+# print('before-->',current_dic)
+# index()
+# print('after-->',current_dic)
+# home('产品经理')
+# shopping_car('产品经理')
+
+
+# 函数的运行时间
+# import time
+#
+# def timer(func):
+#     def wapper():
+#         print(func)
+#         start_time = time.time()
+#         res = func()
+#         stop_time = time.time()
+#         print("函数的运行时间是%s" %(stop_time-start_time))
+#         return res
+#     return wapper
+#
+#
+# @timer
+# def test():
+#     time.sleep(3)
+#     print('test函数运行完毕！')
+#     return '这是test的返回值'
+#
+# res = test()
+# print(res)
+
+
+def fetch(data):
+    print("\033[1;43m这是查询功能\033[0m")
+    print("\033[1;43m用户数据是：\033[0m", data)
+    backend_data = 'backend %s' % data
+    with open('haproxy.conf', 'r') as read_f:
+        tag = False
+        ret = []
+        for read_line in read_f:
+            if read_line.strip() == backend_data:
+                tag = True
+                continue
+            if tag and read_line.startswith('backend'):
+                break
+            if tag:
+                print("%s" % read_line, end='')
+                ret.append(read_line)
+    return ret
+
+
+def add():
+    print("\033[1;43m这是添加功能\033[0m")
+
+
+def change():
+    print("\033[1;43m这是修改功能\033[0m")
+
+
+def delete():
+    print("\033[1;43m这是删除功能\033[0m")
+
+
+def quit():
+    print("退出！")
+
+
+if __name__ == '__main__':
+    msg = """
+    1：查询
+    2：添加
+    3：修改
+    4：删除
+    5：退出
+    """
+    msg_dic = {
+        '1': fetch,
+        '2': add,
+        '3': change,
+        '4': delete,
+        '5': quit
+    }
+    while True:
+        print(msg)
+        choice = input('请输入你的选项：').strip()
+        if not choice: continue
+        if choice == '5': break
+        data = input("请输入用户数据：").strip()
+        if not data: continue
+        res = msg_dic[choice](data)
+        print(res)
