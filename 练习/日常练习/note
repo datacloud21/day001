@@ -1,0 +1,23 @@
+日常笔记：
+
+1、模块：import：（通过sys.path()，调出的是当前执行文件的路径）
+        a:执行对应文件
+        b:引入变量名
+
+释义：先把对应的模块执行一遍，然后再引入指定的函数。如：from if_else import add .
+        例子：
+            from web.web1.web2.web3 import add
+            from web.web1.web2.web3.if_else import add
+
+2、if __name == '__main__'
+释义：
+    a:在当前执行文件里执行'print(__name__)',打印字符串'__main__'；
+    b:在被调用的文件里执行'print(__name__)',打印'当前路径'。
+作用：当加上【if __name == '__main__'】这句话时，下面的所有代码都不会被'二次调用'，避免别人引用自己文件时，执行自己当下的所有主函数代码。
+
+3、try：异常处理
+    结构如下：
+        try:
+            pass
+        except RuntimeError:
+            os._exit(0)   //退出当前执行的线程循环（多线程并发常用）

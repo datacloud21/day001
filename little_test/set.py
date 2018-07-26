@@ -1470,62 +1470,129 @@
 # print(res)
 
 
-def fetch(data):
-    print("\033[1;43m这是查询功能\033[0m")
-    print("\033[1;43m用户数据是：\033[0m", data)
-    backend_data = 'backend %s' % data
-    with open('haproxy.conf', 'r') as read_f:
-        tag = False
-        ret = []
-        for read_line in read_f:
-            if read_line.strip() == backend_data:
-                tag = True
-                continue
-            if tag and read_line.startswith('backend'):
-                break
-            if tag:
-                print("%s" % read_line, end='')
-                ret.append(read_line)
-    return ret
+# 对传入的参数进行检查
+# def recoder(strname,age):
+#     if not isinstance(age,(int,str)):
+#         raise TypeError('bad operand type')
+#     print('姓名：',strname,'年纪：',age)
+#
+# recoder('xiaozhang',age=1.2)
 
 
-def add():
-    print("\033[1;43m这是添加功能\033[0m")
+#
+# def fetch(data):
+#     # print("\033[1;43m这是查询功能\033[0m")
+#     # print("\033[1;43m用户数据是：\033[0m", data)
+#     backend_data = 'backend %s' % data
+#     with open('haproxy.conf', 'r') as read_f:
+#         tag = False
+#         ret = []
+#         for read_line in read_f:
+#             if read_line.strip() == backend_data:
+#                 tag = True
+#                 continue
+#             if tag and read_line.startswith('backend'):
+#                 break
+#             if tag:
+#                 # print("%s" % read_line, end='')
+#                 ret.append(read_line)
+#     return ret
+#
+#
+# def add():
+#     print("\033[1;43m这是添加功能\033[0m")
+#
+#
+# def change(data):
+#     print("\033[1;43m这是修改功能\033[0m")
+#     # print("用户输入的数据是：",data)
+#     backend = data[0]['backend']
+#     old_server_record ='%sserver %s %s weight %s maxconn %s' %(' '*8,data[0]['record']['server'],data[0]['record']['server'],data[0]['record']['weight'],data[0]['record']['maxconn'])
+#     print("原文件中要修改的数据是：",old_server_record)
+#
+#     res = fetch(backend)
+#     print("查询到的原文件数据为：",res)
+#     if not res or old_server_record not in res:
+#         return "你要修改的数据不存在..."
+#
+#
+#
+#
+#
+# def delete():
+#     print("\033[1;43m这是删除功能\033[0m")
+#
+#
+# def quit():
+#     print("退出！")
+#
+#
+# if __name__ == '__main__':
+#     msg = """
+#     1：查询
+#     2：添加
+#     3：修改
+#     4：删除
+#     5：退出
+#     """
+#     msg_dic = {
+#         '1': fetch,
+#         '2': add,
+#         '3': change,
+#         '4': delete,
+#         '5': quit
+#     }
+#     while True:
+#         print(msg)
+#         choice = input('请输入你的选项：').strip()
+#         if not choice: continue
+#         if choice == '5': break
+#         data = input("请输入用户数据：").strip()
+#         if choice != '1':
+#             data = eval(data)
+#         if not data: continue
+#         res = msg_dic[choice](data)
+#         print("最终结果是：",res)
+#
+#
+#
+#
+# # [{'backend':'www.oldboy1.org','record':{'server':'2.2.2.5','weight':30,'maxconn':4000}},{'backend':'www.oldboy1.org','record':{'server':'2.2.2.6','weight':60,'maxconn':8000}}]
 
 
-def change():
-    print("\033[1;43m这是修改功能\033[0m")
+# with open('123','r') as f:
+#     linelist = f.readlines()
+#     # for i in range(len(linelist)):
+#     for i in range(80,len(linelist)):
+#         print("aliyun%s,num%s,em2" %(linelist[i].strip(),str(i)) )
 
 
-def delete():
-    print("\033[1;43m这是删除功能\033[0m")
+# for i in range(50):
+#     list_str = ['avg','dtr','min','max','lo']
+#     for t in range(len(list_str)):
+#         print("num%s-%s" %(i,list_str[t]))
 
 
-def quit():
-    print("退出！")
+# list1 = [['num94', '117.91.180.136'], ['num91', '117.91.180.132'], ['num85', '117.91.180.124'], ['num82', '117.91.180.120'], ['num88', '117.91.180.128'], ['num80', '175.22.55.255'], ['num238', '117.91.182.36'], ['num241', '117.91.182.40'], ['num247', '117.91.182.48'], ['num235', '117.91.182.32'], ['num244', '117.91.182.44'], ['num256', '117.91.182.60'], ['num253', '117.91.182.56'], ['num250', '117.91.182.52'], ['num271', '117.91.182.80'], ['num277', '117.91.182.88'], ['num259', '117.91.182.64'], ['num274', '117.91.182.84'], ['num268', '117.91.182.76'], ['num262', '117.91.182.68'], ['num265', '117.91.182.72'], ['num280', '117.91.182.92']]
+# list2 = [1, 2, 3, 4, 5, 6, 7]
+#
+# # print("list1[0]: ", list1[0])
+# # print("list2[1:5]: ", list2[1:5])
+# for i in range(len(list1)):
+#     print(list1[i][0])
+# a = [['num94', '117.91.180.136'], ['num91', '117.91.180.132'], ['num85', '117.91.180.124'], ['num82', '117.91.180.120'], ['num88', '117.91.180.128'], ['num80', '175.22.55.255'], ['num238', '117.91.182.36'], ['num241', '117.91.182.40'], ['num247', '117.91.182.48'], ['num235', '117.91.182.32'], ['num244', '117.91.182.44'], ['num256', '117.91.182.60'], ['num253', '117.91.182.56'], ['num250', '117.91.182.52'], ['num271', '117.91.182.80'], ['num277', '117.91.182.88'], ['num259', '117.91.182.64'], ['num274', '117.91.182.84'], ['num268', '117.91.182.76'], ['num262', '117.91.182.68'], ['num265', '117.91.182.72'], ['num280', '117.91.182.92']]
+#
+# for i in range(len(a)):
+#     print("Error name :%s ==> Error ip :%s " % (a[i][0], a[i][1]))
 
 
-if __name__ == '__main__':
-    msg = """
-    1：查询
-    2：添加
-    3：修改
-    4：删除
-    5：退出
-    """
-    msg_dic = {
-        '1': fetch,
-        '2': add,
-        '3': change,
-        '4': delete,
-        '5': quit
-    }
-    while True:
-        print(msg)
-        choice = input('请输入你的选项：').strip()
-        if not choice: continue
-        if choice == '5': break
-        data = input("请输入用户数据：").strip()
-        if not data: continue
-        res = msg_dic[choice](data)
-        print(res)
+# from if_else import *
+#
+# print(add(3,4))
+# print(sub(3,4))
+
+
+# aa = "([a,b],[c,de])"
+aa = "([1,2], [3,4], [5,6], [7,8], (9,0))"
+print(type(aa))
+print(eval(aa))
